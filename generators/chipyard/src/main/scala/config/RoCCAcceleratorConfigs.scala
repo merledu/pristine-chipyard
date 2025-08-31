@@ -2,6 +2,7 @@ package chipyard
 
 import org.chipsalliance.cde.config.{Config}
 
+
 // ------------------------------
 // Configs with RoCC Accelerators
 // ------------------------------
@@ -71,3 +72,15 @@ class ZstdCompressorRocketConfig extends Config(
   new compressacc.WithZstdCompressor ++
   new freechips.rocketchip.rocket.WithNHugeCores(1) ++
   new chipyard.config.AbstractConfig)
+
+class TCAMRoCC64x28Config extends Config(
+  new tcam.WithTCAMRoCC64x28 ++
+  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
+  new chipyard.config.AbstractConfig)
+  
+class TCAMRoCC32x28Config extends Config(
+  new tcam.WithTCAMRoCC32x28 ++
+  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
+  new chipyard.config.AbstractConfig)
+
+
